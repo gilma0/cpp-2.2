@@ -199,6 +199,7 @@ namespace ariel{
 				return now;
 			}
 		}
+		return new Node;
 	}
 
 	void Tree::print(){
