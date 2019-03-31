@@ -134,12 +134,12 @@ namespace ariel{
 	}
 
 	void Tree::remove(int a){
-	/*	Node* temp = Contains(a, Root); //finding the node to remove
+		Node* temp = Contains(a, Root); //finding the node to remove
 		if(temp == NULL){ //exception if the node isn't in the tree
 			throw string("not found");
 		}
 		remove(temp); //function to actually delete the node
-		num--; //update tree size*/
+		num--; //update tree size
 		return;
 		}
 
@@ -165,9 +165,11 @@ namespace ariel{
 				return;
 			}
 			if (leaf->parent->right != NULL && leaf->parent->right->data == leaf->data){ //checking if node is right or left son of father
-				leaf->parent->right = leaf->left; //update father
+				leaf->parent->right = leaf->left;//update father
+				leaf->left->parent = leaf->parent;
 			}else{
 				leaf->parent->left = leaf->left; //else case update father
+				leaf->right->parent = leaf->parent;
 			}
 			delete(leaf);
 			return;
@@ -179,9 +181,11 @@ namespace ariel{
 				return;
 			}
 			if (leaf->parent->right != NULL && leaf->parent->right->data == leaf->data){ //checking if node is right or left son of father
-				leaf->parent->right = leaf->right; //update father
+				leaf->parent->right = leaf->right;//update father
+				leaf->left->parent = leaf->parent;
 			}else{
 				leaf->parent->left = leaf->right; //else case update father
+				leaf->right->parent = leaf->parent;
 			}
 			delete(leaf);
 			return;
@@ -233,8 +237,8 @@ namespace ariel{
 		}
 		return Root->data;
 	}
-/*
 
+/*
 	void Tree::buildTree(Node* root, int scrWidth, int itemWidth)
 		// breadth-first traversal with depth limit based on screen width and output field width for one elemet
 		{
@@ -299,37 +303,28 @@ namespace ariel{
 		        pItems = list; // and shift to new one (for next level)
 		    }
 		    delete[] pItems;
-		}*/
-
+		}
+*/
 };
 
 
-/*
 
+/*
 
 int main(){
 	ariel::Tree* abs = new ariel::Tree();
 	abs->insert(10);
 	abs->insert(5);
-	//abs->insert(15);
-//	abs->remove(15);
+	abs->insert(6);
 	abs->remove(5);
-	//abs->remove(10);
 	abs->buildTree(abs->Root,100, 10);
-	cout<<endl<<endl<<endl<<endl;
-//	abs->remove(5);
-//	abs->insert(10);
-	abs->insert(5);
-	abs->insert(15);
+	abs->remove(6);
+	//abs->insert(6);
 	abs->buildTree(abs->Root,100, 10);
-	cout<<endl;
-	abs->insert(5);
-	abs->buildTree(abs->Root,100, 10);
-	//cout<<endl;
-	abs->print();
+
 	return 0;
-}
-*/
+}*/
+
 
 
 
