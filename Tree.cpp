@@ -158,7 +158,7 @@ namespace ariel{
 			delete(leaf);
 			return;
 		}
-		if (leaf->right == NULL){ //node to delete has a right son
+		if (leaf->right == NULL && leaf->left != NULL){ //node to delete has a right son
 			if (leaf->data == Root->data){ //checking if the node to delete is root
 				Root = leaf->left; //update root
 				delete(leaf);
@@ -172,7 +172,7 @@ namespace ariel{
 			delete(leaf);
 			return;
 		}
-		if (leaf->left == NULL){ //node to delete has a right son
+		if (leaf->left == NULL && leaf->right != NULL){ //node to delete has a right son
 			if (leaf->data == Root->data){ //checking if the node to delete is root
 				Root = leaf->right; //update root
 				delete(leaf);
