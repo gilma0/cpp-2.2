@@ -182,7 +182,7 @@ namespace ariel{
 			}
 			if (leaf->parent->right != NULL && leaf->parent->right->data == leaf->data){ //checking if node is right or left son of father
 				leaf->parent->right = leaf->right;//update father
-				leaf->left->parent = leaf->parent;
+				leaf->right->parent = leaf->parent;
 			}else{
 				leaf->parent->left = leaf->right; //else case update father
 				leaf->right->parent = leaf->parent;
@@ -303,28 +303,30 @@ namespace ariel{
 		        pItems = list; // and shift to new one (for next level)
 		    }
 		    delete[] pItems;
-		}
-*/
+		}*/
+
 };
 
 
 
 /*
 
+
 int main(){
 	ariel::Tree* abs = new ariel::Tree();
 	abs->insert(10);
-	abs->insert(5);
-	abs->insert(6);
-	abs->remove(5);
+	abs->insert(12);
+	abs->insert(13);
+	abs->remove(12);
 	abs->buildTree(abs->Root,100, 10);
-	abs->remove(6);
+	//abs->remove(13);
 	//abs->insert(6);
-	abs->buildTree(abs->Root,100, 10);
+	//abs->buildTree(abs->Root,100, 10);
 
 	return 0;
-}*/
+}
 
 
+*/
 
 
