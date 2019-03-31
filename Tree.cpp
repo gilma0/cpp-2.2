@@ -138,7 +138,7 @@ namespace ariel{
 		if(temp == NULL){ //exception if the node isn't in the tree
 			throw string("not found");
 		}
-		Root->parent = NULL;
+	//	Root->parent = NULL;
 		remove(temp); //function to actually delete the node
 		num--; //update tree size
 		return;
@@ -195,6 +195,9 @@ namespace ariel{
 		if (temp->right != NULL){ //checking if the next bigger node has a right son
 			leaf->right = temp->right;//getting the son to the right place
 			temp->right->parent = leaf;
+		}
+		if(temp->data == root()){
+			Root->parent = NULL;
 		}
 		leaf->data = temp->data; //update the deleted node data
 		delete(temp); //removing the temp node
