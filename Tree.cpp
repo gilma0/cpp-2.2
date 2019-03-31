@@ -150,7 +150,7 @@ namespace ariel{
 				delete(leaf);
 				return;
 			}
-			if (leaf->parent->right->data == leaf->data){ //updating the father
+			if (leaf->parent->right != NULL && leaf->parent->right->data == leaf->data){ //updating the father
 				leaf->parent->right = NULL; //if node is right son
 			}else{
 				leaf->parent->left = NULL; //if node is left son
@@ -164,7 +164,7 @@ namespace ariel{
 				delete(leaf);
 				return;
 			}
-			if (leaf->parent->right->data == leaf->data){ //checking if node is right or left son of father
+			if (leaf->parent->right != NULL && leaf->parent->right->data == leaf->data){ //checking if node is right or left son of father
 				leaf->parent->right = leaf->left; //update father
 			}else{
 				leaf->parent->left = leaf->left; //else case update father
@@ -178,7 +178,7 @@ namespace ariel{
 				delete(leaf);
 				return;
 			}
-			if (leaf->parent->right->data == leaf->data){ //checking if node is right or left son of father
+			if (leaf->parent->right != NULL && leaf->parent->right->data == leaf->data){ //checking if node is right or left son of father
 				leaf->parent->right = leaf->right; //update father
 			}else{
 				leaf->parent->left = leaf->right; //else case update father
