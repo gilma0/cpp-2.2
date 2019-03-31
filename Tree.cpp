@@ -112,27 +112,39 @@ namespace ariel{
 
 
 	int Tree::parent (int a){ //return the data of the node parent
-		return find(a)->parent->data;
+		Node* temp = find(a);
+		if (temp->parent == NULL){
+			throw string("no parent");
+		}
+		return temp->parent->data;
 	}
 	int Tree::right (int a){ //return the data of the node right son
+		Node* temp = find(a);
+		if (temp->right == NULL){
+			throw string("no right son");
+		}
 		return find(a)->right->data;
 	}
 	int Tree::left (int a){ //return the data of the node left son
+		Node* temp = find(a);
+		if (temp->left == NULL){
+			throw string("no left son");
+		}
 		return find(a)->left->data;
 	}
 
 	void Tree::remove(int a){
-		/*Node* temp = Contains(a, Root); //finding the node to remove
+		Node* temp = Contains(a, Root); //finding the node to remove
 		if(temp == NULL){ //exception if the node isn't in the tree
 			throw string("not found");
 		}
 		remove(temp); //function to actually delete the node
-		num--; //update tree size */
+		num--; //update tree size
 		return;
 		}
 
 	void Tree::remove(Node* leaf){
-	/*	if (leaf->right == NULL && leaf->left == NULL){ //in case that the node doesn't have sons
+		if (leaf->right == NULL && leaf->left == NULL){ //in case that the node doesn't have sons
 			if (leaf->data == Root->data){ //in case node is root
 				Root = NULL;
 				delete(leaf);
@@ -179,7 +191,7 @@ namespace ariel{
 			leaf->right = temp->right; //getting the son to the right place
 		}
 		leaf->data = temp->data; //update the deleted node data
-		delete(temp); //removing the temp node*/
+		delete(temp); //removing the temp node
 		return;
 	}
 
