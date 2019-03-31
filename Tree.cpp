@@ -227,6 +227,9 @@ namespace ariel{
 
 
 	int Tree::root(){ //return root data
+		if (Root == NULL){
+			throw string ("empty tree");
+		}
 		return Root->data;
 	}
 
