@@ -150,7 +150,7 @@ namespace ariel{
 				delete(leaf);
 				return;
 			}
-			if (leaf->parent->right->data == leaf->data){ //updating the father
+			if (leaf->parent->right != NULL && leaf->parent->right->data == leaf->data){ //updating the father
 				leaf->parent->right = NULL; //if node is right son
 			}else{
 				leaf->parent->left = NULL; //if node is left son
@@ -233,8 +233,9 @@ namespace ariel{
 		}
 		return Root->data;
 	}
+/*
 
-/*	void Tree::buildTree(Node* root, int scrWidth, int itemWidth)
+	void Tree::buildTree(Node* root, int scrWidth, int itemWidth)
 		// breadth-first traversal with depth limit based on screen width and output field width for one elemet
 		{
 		    bool notFinished = false;
@@ -298,10 +299,10 @@ namespace ariel{
 		        pItems = list; // and shift to new one (for next level)
 		    }
 		    delete[] pItems;
-		}*/
+		}
 
 };
-/*
+
 
 
 
@@ -310,13 +311,16 @@ int main(){
 	ariel::Tree* abs = new ariel::Tree();
 	abs->insert(10);
 	abs->insert(5);
-	abs->insert(15);
-	abs->insert(20);
-	abs->insert(14);
-	abs->remove(15);
+	//abs->insert(15);
+//	abs->remove(15);
+	abs->remove(5);
+	//abs->remove(10);
 	abs->buildTree(abs->Root,100, 10);
-	cout<<endl;
-	abs->remove(10);
+	cout<<endl<<endl<<endl<<endl;
+//	abs->remove(5);
+//	abs->insert(10);
+	abs->insert(5);
+	abs->insert(15);
 	abs->buildTree(abs->Root,100, 10);
 	cout<<endl;
 	abs->insert(5);
@@ -326,5 +330,6 @@ int main(){
 	return 0;
 }
 */
+
 
 
