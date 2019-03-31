@@ -134,12 +134,12 @@ namespace ariel{
 	}
 
 	void Tree::remove(int a){
-		/*Node* temp = Contains(a, Root); //finding the node to remove
+		Node* temp = Contains(a, Root); //finding the node to remove
 		if(temp == NULL){ //exception if the node isn't in the tree
 			throw string("not found");
 		}
 		remove(temp); //function to actually delete the node
-		num--; //update tree size*/
+		num--; //update tree size
 		return;
 		}
 
@@ -206,11 +206,12 @@ namespace ariel{
 			return now;
 		}else{
 			if (now->left != NULL){ //recursive call if there is a smaller next bigger
-				closest(now->left);
+				return closest(now->left);
 			}else{
 				return now;
 			}
 		}
+
 	}
 
 	void Tree::print(){
