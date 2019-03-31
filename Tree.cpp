@@ -169,7 +169,7 @@ namespace ariel{
 				leaf->left->parent = leaf->parent;
 			}else{
 				leaf->parent->left = leaf->left; //else case update father
-				leaf->right->parent = leaf->parent;
+				leaf->left->parent = leaf->parent;
 			}
 			delete(leaf);
 			return;
@@ -309,15 +309,16 @@ namespace ariel{
 
 
 
+
 /*
 
 
 int main(){
 	ariel::Tree* abs = new ariel::Tree();
 	abs->insert(10);
-	abs->insert(12);
-	abs->insert(13);
-	abs->remove(12);
+	abs->insert(7);
+	abs->insert(6);
+	abs->remove(7);
 	abs->buildTree(abs->Root,100, 10);
 	//abs->remove(13);
 	//abs->insert(6);
@@ -325,8 +326,9 @@ int main(){
 
 	return 0;
 }
-
-
 */
+
+
+
 
 
