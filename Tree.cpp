@@ -132,7 +132,7 @@ namespace ariel{
 		}
 
 	void Tree::remove(Node* leaf){
-		if (leaf->right == NULL && leaf->left == NULL){ //in case that the node doesn't have sons
+	/*	if (leaf->right == NULL && leaf->left == NULL){ //in case that the node doesn't have sons
 			if (leaf->data == Root->data){ //in case node is root
 				Root = NULL;
 				delete(leaf);
@@ -179,7 +179,7 @@ namespace ariel{
 			leaf->right = temp->right; //getting the son to the right place
 		}
 		leaf->data = temp->data; //update the deleted node data
-		delete(temp); //removing the temp node
+		delete(temp); //removing the temp node*/
 		return;
 	}
 
