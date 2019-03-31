@@ -138,6 +138,7 @@ namespace ariel{
 		if(temp == NULL){ //exception if the node isn't in the tree
 			throw string("not found");
 		}
+		Root->parent = NULL;
 		remove(temp); //function to actually delete the node
 		num--; //update tree size
 		return;
@@ -192,7 +193,8 @@ namespace ariel{
 		}
 		Node* temp = closest(leaf->right); //getting the next bigger node
 		if (temp->right != NULL){ //checking if the next bigger node has a right son
-			leaf->right = temp->right; //getting the son to the right place
+			leaf->right = temp->right;//getting the son to the right place
+			temp->right->parent = leaf;
 		}
 		leaf->data = temp->data; //update the deleted node data
 		delete(temp); //removing the temp node
@@ -310,16 +312,30 @@ namespace ariel{
 
 
 
-/*
 
+
+/*
 
 int main(){
 	ariel::Tree* abs = new ariel::Tree();
+	abs->insert(1);
+	abs->insert(16);
+	abs->insert(13);
 	abs->insert(10);
-	abs->insert(7);
-	abs->insert(6);
-	abs->remove(7);
+	abs->insert(14);
+	abs->insert(20);
+	abs->insert(22);
+	abs->insert(19);
 	abs->buildTree(abs->Root,100, 10);
+	cout<<endl<<endl<<endl;
+	abs->remove(1);
+	abs->remove(16);
+	abs->remove(19);
+	abs->remove(20);
+	abs->buildTree(abs->Root,100, 10);
+	cout<<endl<<abs->parent(22);
+	//abs->insert(13);
+	//abs->buildTree(abs->Root,100, 10);
 	//abs->remove(13);
 	//abs->insert(6);
 	//abs->buildTree(abs->Root,100, 10);
@@ -327,6 +343,7 @@ int main(){
 	return 0;
 }
 */
+
 
 
 
