@@ -44,7 +44,7 @@ int main() {
   .CHECK_THROWS(threetree.insert(3))
   .CHECK_THROWS(threetree.left(6))
   .CHECK_OK    (threetree.print())
-
+/*
   .CHECK_EQUAL (mytree.size(), 5)
   .CHECK_THROWS(mytree.insert(5))
   .CHECK_EQUAL (mytree.size(), 5)
@@ -63,7 +63,7 @@ int main() {
   .CHECK_OK    (mytree.remove(10))
   .CHECK_EQUAL (mytree.root(), 12)
 
-
+*/
 
   .print();
 
